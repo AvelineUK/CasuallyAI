@@ -1077,7 +1077,7 @@ section { position: relative; z-index: 1; }
   font-size: 12px;
 }
 .params-row:last-child { border-bottom: none; }
-.params-key { color: var(--subtle); min-width: 140px; flex-shrink: 0; }
+.params-key { color: var(--subtle); min-width: 200px; flex-shrink: 0; }
 .params-val { color: var(--heading); }
 
 /* Data table */
