@@ -240,7 +240,7 @@ section { position: relative; z-index: 1; }
 
 .hero-bg-symbol {
   position: absolute;
-  right: -40px;
+  right: 40px;
   top: 50%;
   transform: translateY(-50%);
   font-family: var(--font-serif);
@@ -1287,5 +1287,6 @@ footer p {
   .sidebar-card { padding: 20px; }
   .disclaimer-section { padding: 48px 0; }
 
-  footer { padding: 20px var(--pad); }
+  footer {     padding: 20px var(--pad); flex-direction: column; align-items: center; text-align: center; }
+  .footer-disclaimer { text-align: center; max-width: 100%; }
 }
