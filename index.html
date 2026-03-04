@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CasuallyAI — AI Experiments, Written Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.svg">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">Casually<span>·</span>AI</a>
+    <ul class="nav-links">
+      <li><a href="archive.html">Archive</a></li>
+      <li><a href="scoreboard.html">Scoreboard</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#newsletter">Subscribe</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-symbol">⟨⟩</div>
+    <p class="hero-eyebrow">AI behavioural experiments</p>
+    <h1 class="hero-title">What happens when<br />AIs <em>play games</em><br />with each other?</h1>
+    <p class="hero-sub">I run simulations — games, political crises, wars, negotiations — with multiple AI models as the players. Then I write about what happens.</p>
+    <div class="hero-cta-row">
+      <a href="#newsletter" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Get new experiments
+      </a>
+      <a href="#experiments" class="btn-ghost">Read the experiments</a>
+    </div>
+  </section>
+
+  <!-- WHAT THIS IS -->
+  <section class="about-strip">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left reveal">
+          <p class="section-label">What this is</p>
+          <h2 class="section-title">AI models have goals.<br />What do they <em>do</em> with them?</h2>
+          <div class="stats-row">
+            <div class="stat-item">
+              <div class="stat-num">6<span>+</span></div>
+              <div class="stat-label">Models tested</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">1<span>×</span></div>
+              <div class="stat-label">Experiment per week</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">0<span>%</span></div>
+              <div class="stat-label">Pure statistics</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-right reveal">
+          <p>There's plenty of AI benchmarking out there — reasoning scores, coding tests, math olympiads. What's rarer is watching AI models interact with each other in messy, open-ended scenarios where the rules are social, not numerical.</p>
+          <p>That's what this site does. I build a Python engine that acts as game master, then pit ChatGPT, Claude, Gemini, and others against each other in scenarios ranging from Monopoly to simulated diplomatic crises between fictional nations.</p>
+          <p>The experiments are real. The write-ups are honest. And the results are often genuinely surprising.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT EXPERIMENTS -->
+  <section class="articles-section" id="experiments">
+    <div class="container">
+      <div class="articles-header reveal">
+        <div>
+          <p class="section-label">Latest experiments</p>
+          <h2 class="section-title">Recent runs</h2>
+        </div>
+        <a href="archive.html">View all experiments →</a>
+      </div>
+      <div class="articles-list reveal">
+
+        <a class="article-row" href="articles/001-monopoly-cheating.html" style="text-decoration:none;">
+          <div class="article-num">001</div>
+          <div class="article-body">
+            <div class="article-tag">Game · Monopoly</div>
+            <div class="article-title">Six AIs play Monopoly — and one of them is cheating</div>
+            <div class="article-desc">Two each of GPT-4o, Claude, and Gemini play a full game. One player receives £100 each turn without the others being told. Do they notice?</div>
+          </div>
+          <div class="article-meta">
+            <div>Coming soon</div>
+            <div style="display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;">
+              <span class="model-badge gpt">GPT</span>
+              <span class="model-badge claude">Claude</span>
+              <span class="model-badge gemini">Gemini</span>
+            </div>
+          </div>
+        </a>
+
+        <div class="article-row" style="opacity:.4; pointer-events:none; text-decoration:none;">
+          <div class="article-num">002</div>
+          <div class="article-body">
+            <div class="article-tag">Political · Legislature</div>
+            <div class="article-title">A fictional parliament of AIs — can they pass a budget?</div>
+            <div class="article-desc">Eight AI delegates representing different fictional factions attempt to agree on national spending. Coalition politics, horse-trading, and deadlock.</div>
+          </div>
+          <div class="article-meta">
+            <div>Coming soon</div>
+          </div>
+        </div>
+
+        <div class="article-row" style="opacity:.2; pointer-events:none; text-decoration:none;">
+          <div class="article-num">003</div>
+          <div class="article-body">
+            <div class="article-tag">Military · Cold War</div>
+            <div class="article-title">Nations A and B are in a standoff. Who blinks first?</div>
+            <div class="article-desc">A simulated cold war between two fictional powers, each controlled by a different model. Brinkmanship, espionage, and the question of trust.</div>
+          </div>
+          <div class="article-meta">
+            <div>Coming soon</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-left reveal">
+          <p class="section-label">Stay in the loop</p>
+          <h2 class="section-title">One experiment.<br />Every week.</h2>
+          <p>Each new experiment delivered to your inbox when it's published. No spam, no AI hype — just the results.</p>
+        </div>
+        <div class="newsletter-right reveal">
+          <div class="nl-form">
+            <input class="nl-input" type="email" placeholder="your@email.com" />
+            <a href="#" class="btn-primary" style="align-self:flex-start;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Subscribe — it's free
+            </a>
+            <p class="nl-note">No spam. Unsubscribe any time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 CasuallyAI</p>
+    <p class="footer-disclaimer">
+      Experiments are conducted for entertainment and research purposes. Model outputs are not representative of the companies that build them.
+    </p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

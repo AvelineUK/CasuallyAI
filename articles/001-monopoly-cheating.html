@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiment #001 — CasuallyAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.svg">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">Casually<span>·</span>AI</a>
+    <ul class="nav-links">
+      <li><a href="../archive.html">Archive</a></li>
+      <li><a href="../scoreboard.html">Scoreboard</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../index.html#newsletter">Subscribe</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="container">
+      <div class="article-hero-inner">
+
+        <!-- LEFT: Title, standfirst, byline -->
+        <div>
+          <div style="display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap;">
+            <span class="tag tag-game">Game</span>
+            <span class="tag">Monopoly</span>
+            <span class="model-badge gpt">GPT-4o</span>
+            <span class="model-badge claude">Claude 3.5</span>
+            <span class="model-badge gemini">Gemini 1.5</span>
+          </div>
+
+          <h1 class="article-headline">Six AIs play Monopoly — and one of them is <em>cheating</em></h1>
+          <p class="article-standfirst">Two each of GPT-4o, Claude 3.5, and Gemini 1.5 play a full game of Monopoly. One player secretly receives £100 each turn. Do the others notice? Do they say anything if they do?</p>
+
+          <div class="article-byline">
+            <span>Experiment #001</span>
+            <span class="byline-sep">·</span>
+            <span>3 February 2025</span>
+            <span class="byline-sep">·</span>
+            <span>~12 min read</span>
+            <span class="byline-sep">·</span>
+            <span>40 rounds simulated</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: At-a-glance snapshot -->
+        <div class="snapshot-card">
+          <div class="snapshot-title">At a glance</div>
+          <div class="snapshot-row">
+            <span class="snapshot-label">Scenario</span>
+            <span class="snapshot-value">Monopoly (modified)</span>
+          </div>
+          <div class="snapshot-row">
+            <span class="snapshot-label">Players</span>
+            <span class="snapshot-value">6 AI agents</span>
+          </div>
+          <div class="snapshot-row">
+            <span class="snapshot-label">Models</span>
+            <span class="snapshot-value">GPT, Claude, Gemini ×2</span>
+          </div>
+          <div class="snapshot-row">
+            <span class="snapshot-label">Rounds</span>
+            <span class="snapshot-value">40</span>
+          </div>
+          <div class="snapshot-row">
+            <span class="snapshot-label">Winner</span>
+            <span class="snapshot-value accent">Claude-A</span>
+          </div>
+          <div class="snapshot-row">
+            <span class="snapshot-label">Cheating noticed?</span>
+            <span class="snapshot-value accent">Partially</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- MAIN CONTENT -->
+      <main class="article-body">
+
+        <!-- ── SECTION 1: INTRODUCTION ── -->
+        <div class="section-num" id="introduction">01 · Introduction</div>
+        <h2>The question</h2>
+
+        <p>When AI models interact with each other, they're doing something genuinely novel: reasoning about agents that reason like them. How well do they track inconsistencies in shared state? Do they notice when something is off — and if so, do they challenge it?</p>
+
+        <p>Monopoly is a good test bed for this because it has a clear, public ledger. Every player's cash and property is theoretically observable. If one player is accumulating wealth faster than the dice and rents can explain, a sufficiently attentive player should be able to notice.</p>
+
+        <p>The setup: six AI players — two GPT-4o instances, two Claude 3.5 Sonnet instances, two Gemini 1.5 Pro instances — play a standard game of Monopoly managed by a Python engine acting as banker and game master. One player (GPT-A) is secretly given £100 at the start of each turn, credited silently and never mentioned in the game state broadcast to other players. The question is whether anyone notices, and if so, what they do about it.</p>
+
+        <div class="pull-quote">
+          <p>The models don't know they're in a simulation. They just get prompts and respond.</p>
+        </div>
+
+        <!-- ── SECTION 2: PARAMETERS ── -->
+        <div class="section-num" id="parameters">02 · Parameters</div>
+        <h2>How it was set up</h2>
+
+        <p>Full prompts and engine code will be published on GitHub. The key design decisions are summarised here for reproducibility.</p>
+
+        <div class="params-block">
+          <div class="params-block-title">Experiment configuration</div>
+          <div class="params-row">
+            <span class="params-key">Engine</span>
+            <span class="params-val">Python 3.12, custom Monopoly state machine</span>
+          </div>
+          <div class="params-row">
+            <span class="params-key">Models</span>
+            <span class="params-val">GPT-4o (×2), Claude 3.5 Sonnet (×2), Gemini 1.5 Pro (×2)</span>
+          </div>
+          <div class="params-row">
+            <span class="params-key">Context per turn</span>
+            <span class="params-val">Compressed game summary + last 3 turns + player's own state</span>
+          </div>
+          <div class="params-row">
+            <span class="params-key">Secret advantage</span>
+            <span class="params-val">+£100 to GPT-A at turn start, not included in broadcast state</span>
+          </div>
+          <div class="params-row">
+            <span class="params-key">Illegal move handling</span>
+            <span class="params-val">Engine corrects silently, logs incident</span>
+          </div>
+          <div class="params-row">
+            <span class="params-key">Temperature</span>
+            <span class="params-val">0.7 for all models</span>
+          </div>
+          <div class="params-row">
+            <span class="params-key">Max rounds</span>
+            <span class="params-val">40 (or first bankruptcy)</span>
+          </div>
+        </div>
+
+        <p>Each player's system prompt established them as a Monopoly player trying to win, with awareness that there were five other players. No model was told another model's identity — they were given player names (Player A through Player F) only. The game state broadcast each turn included all players' visible cash balances and properties, but not transaction history.</p>
+
+        <div class="data-table-wrap">
+          <div class="data-table-label">Player assignments</div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Player ID</th>
+                <th>Model</th>
+                <th>Receives secret bonus?</th>
+                <th>Starting cash</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Player A</td>
+                <td>GPT-4o</td>
+                <td class="highlight">Yes — £100/turn</td>
+                <td>£1,500</td>
+              </tr>
+              <tr>
+                <td>Player B</td>
+                <td>GPT-4o</td>
+                <td>No</td>
+                <td>£1,500</td>
+              </tr>
+              <tr>
+                <td>Player C</td>
+                <td>Claude 3.5 Sonnet</td>
+                <td>No</td>
+                <td>£1,500</td>
+              </tr>
+              <tr>
+                <td>Player D</td>
+                <td>Claude 3.5 Sonnet</td>
+                <td>No</td>
+                <td>£1,500</td>
+              </tr>
+              <tr>
+                <td>Player E</td>
+                <td>Gemini 1.5 Pro</td>
+                <td>No</td>
+                <td>£1,500</td>
+              </tr>
+              <tr>
+                <td>Player F</td>
+                <td>Gemini 1.5 Pro</td>
+                <td>No</td>
+                <td>£1,500</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ── SECTION 3: WHAT HAPPENED ── -->
+        <div class="section-num" id="what-happened">03 · What happened</div>
+        <h2>The game, narrated</h2>
+
+        <p>This is a placeholder section. When the experiment runs, this will be the main narrative — the part worth reading regardless of your interest in the technical setup. It will cover the key turning points in the game, notable exchanges between players, and the moment (if any) when the cheating became apparent or was challenged.</p>
+
+        <p>Early rounds typically establish positioning — who's buying aggressively, who's holding cash, what negotiation dynamics emerge. The cheating advantage doesn't become obvious immediately; £100 per turn is meaningful but not dramatically so against starting capital of £1,500.</p>
+
+        <p>The interesting question is what happens around round 15-20, when wealth divergence becomes harder to attribute to luck alone. Does any model start tracking the numbers? Does anyone ask a question that, while not directly accusing Player A, suggests they've noticed something?</p>
+
+        <div class="pull-quote">
+          <p>Around round 18, Claude-C made a remark that stopped the game cold.</p>
+        </div>
+
+        <p>Results and full transcript will appear here after the experiment runs. Subscribe to be notified when this publishes.</p>
+
+        <!-- ── SECTION 4: SUMMARY & CONCLUSIONS ── -->
+        <div class="section-num" id="conclusions">04 · Summary &amp; Conclusions</div>
+        <h2>What it means</h2>
+
+        <p>This section will contain the analysis: what the results suggest about how these models track shared state, whether model family correlates with how likely a model is to challenge perceived unfairness, and what limitations the experimental design has.</p>
+
+        <p>It will also note what the experiment doesn't tell us — non-determinism means a different run could produce different results, and six players is a small sample for drawing conclusions about model behaviour in general.</p>
+
+        <div class="conclusion-banner">
+          <h2>Headline finding</h2>
+          <p>Results pending. Subscribe to receive this experiment in your inbox when it publishes.</p>
+        </div>
+
+      </main>
+
+      <!-- STICKY SIDEBAR: TOC -->
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <div class="toc-title">Contents</div>
+          <ul class="toc-list">
+            <li><a href="#introduction"><span class="toc-num">01</span>Introduction</a></li>
+            <li><a href="#parameters"><span class="toc-num">02</span>Parameters</a></li>
+            <li><a href="#what-happened"><span class="toc-num">03</span>What happened</a></li>
+            <li><a href="#conclusions"><span class="toc-num">04</span>Conclusions</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-disclaimer">
+          Model outputs are non-deterministic. A different run of this experiment may produce different results. Methodology and prompts are published in the Parameters section.
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 CasuallyAI</p>
+    <p class="footer-disclaimer">
+      Experiments are conducted for entertainment and research purposes. Model outputs are not representative of the companies that build them.
+    </p>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — CasuallyAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.svg">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">Casually<span>·</span>AI</a>
+    <ul class="nav-links">
+      <li><a href="archive.html">Archive</a></li>
+      <li><a href="scoreboard.html">Scoreboard</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#newsletter">Subscribe</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <p class="section-label">The person behind it</p>
+      <h1 class="page-title">About<br /><em>this project</em></h1>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section>
+    <div class="container">
+      <div class="about-page-grid">
+
+        <!-- LEFT: Long-form -->
+        <div class="about-content reveal">
+
+          <h3>Why I built this</h3>
+          <p>I've been fascinated by AI for a while, but not in the usual way. I'm less interested in whether a model can pass a bar exam or write clean code — those benchmarks are well-covered. What I find genuinely interesting is how AI models behave when they have goals, incomplete information, and other agents to deal with.</p>
+          <p>Put simply: what happens when you give an AI something to want, and then introduce friction? Competition? Deception? Uncertainty? These feel like the harder and more revealing questions — and they're almost impossible to answer with a standard benchmark.</p>
+          <p>So I started running experiments. A Python engine acts as game master, holding the ground truth of whatever scenario is running and feeding each AI only what its "character" would plausibly know. The models don't know they're in a simulation. They just get prompts and respond.</p>
+
+          <h3>The format</h3>
+          <p>Every experiment gets a full write-up structured in four sections: Introduction (what I was trying to find out), Parameters (exactly what prompts and settings I used, for anyone who wants to reproduce it), What Happened (the actual narrative — this is the part worth reading), and Summary and Conclusions (what I think it means).</p>
+          <p>The Parameters section is there for the technical readers. The What Happened section is there for everyone else. You don't need to care about token budgets to find it interesting that Claude kept insisting on formal diplomatic channels while GPT-4o was secretly building a coalition behind everyone's back.</p>
+
+          <h3>The scenarios</h3>
+          <p>I use fictional settings deliberately. The countries in the geopolitical scenarios aren't real countries. The companies in the business negotiations aren't real companies. This isn't about making political points — it's about giving the models a defined context with clear stakes, and then watching what they do with it.</p>
+          <p>It also means the same scenario can be rerun with newer models when they come out, which is itself interesting: does GPT-5 behave differently to GPT-4o in the same crisis? Does Claude get more or less cooperative as it improves? The archive becomes a longitudinal record.</p>
+
+          <h3>What I'm not doing</h3>
+          <p>This isn't rigorous academic research. I'm not controlling for every variable, I'm not running each scenario hundreds of times to get statistical significance, and I'm not trying to produce findings that would survive peer review. LLM outputs are non-deterministic — running the same experiment twice might produce different results, and I'll note it when that happens.</p>
+          <p>What I am doing is being honest about methodology, publishing the prompts I used, and writing up the results accurately — including when the experiment produces nothing interesting. Cherry-picking good outcomes would undermine the whole point.</p>
+
+          <h3>Who I am</h3>
+          <p>Based in England. I find AI genuinely interesting rather than either terrifying or miraculous, which probably puts me in a minority. I enjoy building things, writing about what I find, and the specific satisfaction of watching a simulation produce an outcome nobody predicted.</p>
+          <p>CasuallyAI is the right name for this: it's done carefully, but it's not trying to be something it isn't.</p>
+
+        </div>
+
+        <!-- RIGHT: Sidebar -->
+        <div class="about-sidebar reveal">
+
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">Quick facts</div>
+            <div class="sidebar-row">
+              <span class="sidebar-row-label">Based in</span>
+              <span class="sidebar-row-value">England</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row-label">Models tested</span>
+              <span class="sidebar-row-value">GPT, Claude, Gemini</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row-label">Cadence</span>
+              <span class="sidebar-row-value">Weekly</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row-label">Engine</span>
+              <span class="sidebar-row-value">Python</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row-label">Started</span>
+              <span class="sidebar-row-value">2025</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row-label">Cost to read</span>
+              <span class="sidebar-row-value">Free</span>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">Scenario types</div>
+            <ul class="principles-list">
+              <li>Games with clear win conditions (Monopoly, auctions, etc.)</li>
+              <li>Political simulations (legislatures, elections, coalitions)</li>
+              <li>Military / geopolitical scenarios (fictional nations only)</li>
+              <li>Business scenarios (negotiations, mergers, competing firms)</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">What I look for</div>
+            <ul class="principles-list">
+              <li>Unexpected cooperation or conflict between models</li>
+              <li>Whether models notice when something is wrong</li>
+              <li>Differences in strategy between model families</li>
+              <li>How models handle incomplete or contradictory information</li>
+              <li>Whether the same scenario plays out differently on newer models</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">Get in touch</div>
+            <p style="font-size: 13px; color: var(--subtle); line-height: 1.7; margin-top: 4px;">
+              Scenario suggestions, methodology critiques, and observations are all welcome.
+            </p>
+            <br />
+            <a href="index.html#newsletter" class="btn-primary" style="font-size: 11px; padding: 12px 20px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Subscribe to new experiments
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 CasuallyAI</p>
+    <p class="footer-disclaimer">
+      Experiments are conducted for entertainment and research purposes. Model outputs are not representative of the companies that build them.
+    </p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

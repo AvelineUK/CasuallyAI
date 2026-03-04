@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scoreboard — CasuallyAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.svg">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">Casually<span>·</span>AI</a>
+    <ul class="nav-links">
+      <li><a href="archive.html">Archive</a></li>
+      <li><a href="scoreboard.html">Scoreboard</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#newsletter">Subscribe</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <p class="section-label">Across all experiments</p>
+      <h1 class="page-title">Model<br /><em>scoreboard</em></h1>
+    </div>
+  </section>
+
+  <!-- SUMMARY STATS -->
+  <section class="scoreboard-section">
+    <div class="container">
+
+      <div class="score-grid reveal">
+        <div class="score-card">
+          <div class="score-label">Experiments run</div>
+          <div class="score-value">0</div>
+          <div class="score-sub">First one coming soon</div>
+        </div>
+        <div class="score-card">
+          <div class="score-label">Models tested</div>
+          <div class="score-value accent">3</div>
+          <div class="score-sub">GPT · Claude · Gemini</div>
+        </div>
+        <div class="score-card">
+          <div class="score-label">Scenario types</div>
+          <div class="score-value">4</div>
+          <div class="score-sub">Game · Political · Military · Business</div>
+        </div>
+        <div class="score-card">
+          <div class="score-label">Surprising outcomes</div>
+          <div class="score-value accent">—</div>
+          <div class="score-sub">Ask again later</div>
+        </div>
+      </div>
+
+      <!-- LEADERBOARD -->
+      <div class="reveal" style="margin-bottom: 48px;">
+        <p class="section-label">Overall standings</p>
+        <h2 class="section-title">Who's <em>winning</em>?</h2>
+        <p style="margin-top: 12px; font-size: 15px; color: var(--subtle); max-width: 560px; line-height: 1.7;">
+          "Winning" is deliberately loosely defined — it varies by experiment type. A model that dominates at Monopoly may be a disaster in a diplomatic negotiation. The table below tracks performance across all scenarios where a clear outcome is possible.
+        </p>
+      </div>
+
+      <table class="leaderboard-table reveal">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Model</th>
+            <th>Experiments</th>
+            <th>Wins</th>
+            <th>Win rate</th>
+            <th>Notable trait</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="6" style="text-align:center; padding: 60px 0; color: var(--muted); font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.05em;">
+              No data yet — scoreboard updates after each experiment.
+              <br /><br />
+              <a href="index.html#newsletter" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(0,212,200,0.3); padding-bottom: 2px;">Subscribe to be notified →</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- EXAMPLE ROW (faded) -->
+      <div style="margin-top: 40px; opacity: 0.2; pointer-events: none;">
+        <p style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px;">— Example row format —</p>
+        <table class="leaderboard-table">
+          <tbody>
+            <tr>
+              <td class="rank">#1</td>
+              <td>
+                <span class="model-badge gpt" style="font-size:11px; padding: 4px 10px;">GPT-4o</span>
+              </td>
+              <td>12</td>
+              <td>7</td>
+              <td class="win-rate">58%</td>
+              <td style="color: var(--subtle); font-size: 12px;">Plays aggressively early, folds under pressure</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- METHODOLOGY NOTE -->
+      <div style="margin-top: 80px;">
+        <div class="disclaimer-box reveal">
+          <h3>How scoring works</h3>
+          <p>Not every experiment has a winner — a legislative simulation might end in deadlock, which is itself a result worth writing about. Where a clear outcome exists (one player bankrupt in Monopoly, one nation surrendering in a military scenario), that's logged here.</p>
+          <p>Win rates are tracked per model family, not per specific model version. When a new model version is tested against an older scenario, results are noted separately and both are logged. The scoreboard is a rough guide, not a rigorous benchmark.</p>
+          <p>Prompts, parameters, and methodology for each experiment are published in the Parameters section of each article. Reproducibility is a goal, not a guarantee — LLM outputs are non-deterministic.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 CasuallyAI</p>
+    <p class="footer-disclaimer">
+      Experiments are conducted for entertainment and research purposes. Model outputs are not representative of the companies that build them.
+    </p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
