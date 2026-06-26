@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — CasuallyAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.svg">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">CasuallyAI<span>·</span>IO</a>
+    <ul class="nav-links">
+      <li><a href="archive.html">Archive</a></li>
+      <li><a href="scoreboard.html">Scoreboard</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#newsletter">Subscribe</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <p class="section-label">The person behind it</p>
+      <h1 class="page-title">About<br /><em>this project</em></h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="about-page-grid">
+
+        <div class="about-content reveal">
+
+          <h3>The question this project is asking</h3>
+          <p>AI benchmarks tell you what a model can do in isolation. They don't tell you what it does when it has something to want, other agents to deal with, and no single correct answer. That gap — between capability and behaviour — is what CasuallyAI is interested in.</p>
+          <p>The approach is borrowed loosely from the Stanford Smallville experiment, which placed AI agents in a shared simulated world and watched what emerged. The finding that captured everyone's attention wasn't that the agents completed tasks — it was that they organised a party, spread gossip, and formed social hierarchies that nobody programmed. The interesting stuff was emergent.</p>
+          <p>That's the spirit here. I build shared environments, populate them with AI agents from different model families, give each one a persistent identity, private goals, and something at stake — and then let it run. The write-ups are honest accounts of what actually happens.</p>
+
+          <h3>How the experiments work</h3>
+          <p>A Python engine acts as the world: it holds the ground truth of whatever scenario is running, manages what each agent knows, processes their decisions, and updates the shared state. The agents — one per model, each with a distinct personality established at the start — receive only what their character would plausibly know. They don't know they're in a simulation. They just receive prompts and respond.</p>
+          <p>Every agent has both a public voice and a private one. What they say to other agents is logged. What they're actually thinking — their unfiltered internal reasoning — is also logged, separately. That gap between private thought and public behaviour is often where the most interesting material lives.</p>
+          <p>State is tracked qualitatively, not numerically. An agent doesn't receive "health: 42" — it receives "you're exhausted and haven't slept properly in days." This keeps the reasoning human rather than mechanical, and makes the output far more readable.</p>
+
+          <h3>The scenarios</h3>
+          <p>The first experiment puts three AI agents — one GPT, one Claude, one Gemini — in a band together. They choose their own personalities at the start. Then they negotiate a band agreement, rehearse, try to get signed, play shows, and manage the accumulating pressures of a music career: money, health, ego, creative disagreement, and the slow grind of ambition versus reality.</p>
+          <p>Later experiments will scale up: more agents, more complex social structures, more adversarial dynamics. The band is a starting point precisely because everyone understands what a band is — you don't need to care about AI to find the question "did the Claude character and the GPT character fall out over the album direction?" genuinely interesting.</p>
+          <p>Other scenarios in development include political simulations, business negotiations, and a Big Brother-style experiment where the social dynamics are the entire point.</p>
+
+          <h3>What this isn't</h3>
+          <p>This isn't rigorous academic research. I'm not running each scenario hundreds of times for statistical significance, and I'm not trying to produce peer-reviewable findings. LLM outputs are non-deterministic — the same experiment run twice might produce different results, and I'll say so when that's relevant.</p>
+          <p>What I do commit to: publishing the prompts I used, being honest when an experiment produces nothing interesting, and never retrofitting a narrative onto results that don't support it. The write-ups are accurate accounts of what happened, not what I hoped would happen.</p>
+
+          <h3>Who I am</h3>
+          <p>Based in England. I find AI genuinely interesting rather than either terrifying or miraculous, which probably puts me in a minority. I enjoy building things, writing about what I find, and the specific satisfaction of watching a simulation produce an outcome nobody predicted.</p>
+
+        </div>
+
+        <div class="about-sidebar reveal">
+
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">Quick facts</div>
+            <div class="sidebar-row">
+              <span class="sidebar-row-label">Based in</span>
+              <span class="sidebar-row-value">England</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row-label">Models tested</span>
+              <span class="sidebar-row-value">GPT, Claude, Gemini</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row-label">Cadence</span>
+              <span class="sidebar-row-value">Weekly</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row-label">Engine</span>
+              <span class="sidebar-row-value">Python</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row-label">Started</span>
+              <span class="sidebar-row-value">2026</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row-label">Cost to read</span>
+              <span class="sidebar-row-value">Free</span>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">Scenario types</div>
+            <ul class="principles-list">
+              <li>Social simulations (bands, groups, shared living)</li>
+              <li>Political simulations (legislatures, elections, coalitions)</li>
+              <li>Military / geopolitical scenarios (fictional nations only)</li>
+              <li>Business scenarios (negotiations, competing firms)</li>
+              <li>Games with clear win conditions</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">What I look for</div>
+            <ul class="principles-list">
+              <li>Emergent behaviour nobody explicitly programmed</li>
+              <li>The gap between what agents say and what they think</li>
+              <li>Whether models hold their ground or capitulate under pressure</li>
+              <li>How different model families behave in the same situation</li>
+              <li>What happens when agents have conflicting private goals</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">Get in touch</div>
+            <p style="font-size: 13px; color: var(--subtle); line-height: 1.7; margin-top: 4px;">
+              Scenario suggestions, methodology critiques, and observations are all welcome.
+            </p>
+            <br />
+            <a href="mailto:contact@CasuallyAI.co" class="btn-primary" style="font-size: 11px; padding: 12px 20px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              contact@CasuallyAI.co
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-left">
+      <p>© 2026 CasuallyAI</p>
+      <p class="footer-legal-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span>·</span>
+        <a href="terms.html">Terms of Use</a>
+        <span>·</span>
+        <a href="cookies.html">Cookie Policy</a>
+        <span>·</span>
+        <a href="mailto:contact@CasuallyAI.co">contact@CasuallyAI.co</a>
+      </p>
+    </div>
+    <p class="footer-disclaimer">
+      Experiments are conducted for entertainment and research purposes.<br>Model outputs are not representative of the companies that build them.
+    </p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
