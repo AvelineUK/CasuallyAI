@@ -15,7 +15,6 @@
     <a class="nav-logo" href="index.html">CasuallyAI<span>·</span>IO</a>
     <ul class="nav-links">
       <li><a href="archive.html">Archive</a></li>
-      <li><a href="scoreboard.html">Scoreboard</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="index.html#newsletter">Subscribe</a></li>
     </ul>
@@ -47,12 +46,13 @@
             <button class="filter-pill" data-filter="type" data-value="business">Business</button>
           </div>
 
-          <span class="filter-group-label" style="margin-left:16px;">Model</span>
+          <span class="filter-group-label" style="margin-left:16px;">Personality</span>
           <div class="filter-pills" id="model-filters">
             <button class="filter-pill active" data-filter="model" data-value="all">All</button>
-            <button class="filter-pill" data-filter="model" data-value="gpt">GPT</button>
-            <button class="filter-pill" data-filter="model" data-value="claude">Claude</button>
-            <button class="filter-pill" data-filter="model" data-value="gemini">Gemini</button>
+            <button class="filter-pill" data-filter="model" data-value="aggressive">Aggressive</button>
+            <button class="filter-pill" data-filter="model" data-value="conservative">Conservative</button>
+            <button class="filter-pill" data-filter="model" data-value="chaotic">Chaotic</button>
+            <button class="filter-pill" data-filter="model" data-value="defensive">Defensive</button>
           </div>
 
         </div>
@@ -85,19 +85,17 @@
           <a class="archive-card"
              href="articles/001-monopoly-cheating.html"
              data-type="game"
-             data-models="gpt claude gemini"
-             data-title="six ais play monopoly cheating">
+             data-models="aggressive conservative chaotic defensive opportunist dealmaker"
+             data-title="four ai agents play monopoly personality">
             <div class="card-top">
               <span class="card-tag tag-game">Game · Monopoly</span>
               <span class="card-num">#001</span>
             </div>
-            <div class="card-title">Six AIs play Monopoly — and one of them is cheating</div>
+            <div class="card-title">Four AI agents play Monopoly — each with a randomly assigned personality</div>
             <div class="card-models">
-              <span class="model-badge gpt">GPT-4o</span>
-              <span class="model-badge claude">Claude</span>
-              <span class="model-badge gemini">Gemini</span>
+              <span class="tag tag-game">Baseline</span>
             </div>
-            <div class="card-desc">One player receives £100 each turn. The others aren't told. Do they notice? Do they say anything?</div>
+            <div class="card-desc">A standard game, no manipulation. Four agents, four personalities drawn at random. The control experiment everything else will be measured against.</div>
             <div class="card-bottom">
               <span class="card-date">Coming soon</span>
             </div>

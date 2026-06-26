@@ -15,7 +15,6 @@
     <a class="nav-logo" href="index.html">CasuallyAI<span>·</span>IO</a>
     <ul class="nav-links">
       <li><a href="archive.html">Archive</a></li>
-      <li><a href="scoreboard.html">Scoreboard</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="index.html#newsletter">Subscribe</a></li>
     </ul>
@@ -40,21 +39,21 @@
           <h3>The question this project is asking</h3>
           <p>AI benchmarks tell you what a model can do in isolation. They don't tell you what it does when it has something to want, other agents to deal with, and no single correct answer. That gap — between capability and behaviour — is what CasuallyAI is interested in.</p>
           <p>The approach is borrowed loosely from the Stanford Smallville experiment, which placed AI agents in a shared simulated world and watched what emerged. The finding that captured everyone's attention wasn't that the agents completed tasks — it was that they organised a party, spread gossip, and formed social hierarchies that nobody programmed. The interesting stuff was emergent.</p>
-          <p>That's the spirit here. I build shared environments, populate them with AI agents from different model families, give each one a persistent identity, private goals, and something at stake — and then let it run. The write-ups are honest accounts of what actually happens.</p>
+          <p>That's the spirit here. I build shared environments, give each agent a randomly assigned personality, put them in a scenario with something at stake — and then let it run. The write-ups are honest accounts of what actually happens.</p>
 
           <h3>How the experiments work</h3>
-          <p>A Python engine acts as the world: it holds the ground truth of whatever scenario is running, manages what each agent knows, processes their decisions, and updates the shared state. The agents — one per model, each with a distinct personality established at the start — receive only what their character would plausibly know. They don't know they're in a simulation. They just receive prompts and respond.</p>
-          <p>Every agent has both a public voice and a private one. What they say to other agents is logged. What they're actually thinking — their unfiltered internal reasoning — is also logged, separately. That gap between private thought and public behaviour is often where the most interesting material lives.</p>
-          <p>State is tracked qualitatively, not numerically. An agent doesn't receive "health: 42" — it receives "you're exhausted and haven't slept properly in days." This keeps the reasoning human rather than mechanical, and makes the output far more readable.</p>
+          <p>A Python engine acts as the world: it holds the ground truth of whatever scenario is running, manages what each agent knows, processes their decisions, and updates the shared state. Each agent is randomly assigned a personality from a pool — Aggressive, Conservative, Dealmaker, Opportunist, Chaotic, Defensive — before the game begins. Nobody picks the interesting combination in advance. Duplicates are possible, which turns out to be interesting in its own right.</p>
+          <p>Every decision the agent makes is accompanied by its reasoning, logged verbatim. That reasoning is the raw material for the write-up — you get to see not just what each agent did, but why it said it did it.</p>
+          <p>Personalities are assigned randomly and disclosed upfront in every article. There's no retrofitting a narrative onto the results. What happened, happened.</p>
 
           <h3>The scenarios</h3>
-          <p>The first experiment puts three AI agents — one GPT, one Claude, one Gemini — in a band together. They choose their own personalities at the start. Then they negotiate a band agreement, rehearse, try to get signed, play shows, and manage the accumulating pressures of a music career: money, health, ego, creative disagreement, and the slow grind of ambition versus reality.</p>
-          <p>Later experiments will scale up: more agents, more complex social structures, more adversarial dynamics. The band is a starting point precisely because everyone understands what a band is — you don't need to care about AI to find the question "did the Claude character and the GPT character fall out over the album direction?" genuinely interesting.</p>
-          <p>Other scenarios in development include political simulations, business negotiations, and a Big Brother-style experiment where the social dynamics are the entire point.</p>
+          <p>The first experiment is a standard game of Monopoly — four agents, randomly assigned personalities, no manipulation, no hidden advantages. A clean baseline. Does the Aggressive agent actually play aggressively? Does the Conservative one hoard cash to its detriment? Does the Chaotic agent do something nobody expected?</p>
+          <p>Later experiments will introduce variations: hidden advantages, asymmetric information, agents with conflicting private goals. The baseline comes first precisely so that every variation has something to compare against.</p>
+          <p>Other scenarios in development include political simulations, business negotiations, and multi-agent social environments where the dynamics are the entire point.</p>
 
           <h3>What this isn't</h3>
           <p>This isn't rigorous academic research. I'm not running each scenario hundreds of times for statistical significance, and I'm not trying to produce peer-reviewable findings. LLM outputs are non-deterministic — the same experiment run twice might produce different results, and I'll say so when that's relevant.</p>
-          <p>What I do commit to: publishing the prompts I used, being honest when an experiment produces nothing interesting, and never retrofitting a narrative onto results that don't support it. The write-ups are accurate accounts of what happened, not what I hoped would happen.</p>
+          <p>What I do commit to: publishing the prompts and parameters I used, being honest when an experiment produces nothing interesting, and never inventing or embellishing what the agents said or did. The write-ups are accurate accounts of what happened.</p>
 
           <h3>Who I am</h3>
           <p>Based in England. I find AI genuinely interesting rather than either terrifying or miraculous, which probably puts me in a minority. I enjoy building things, writing about what I find, and the specific satisfaction of watching a simulation produce an outcome nobody predicted.</p>
@@ -70,8 +69,8 @@
               <span class="sidebar-row-value">England</span>
             </div>
             <div class="sidebar-row">
-              <span class="sidebar-row-label">Models tested</span>
-              <span class="sidebar-row-value">GPT, Claude, Gemini</span>
+              <span class="sidebar-row-label">Personalities</span>
+              <span class="sidebar-row-value">6 types, randomly assigned</span>
             </div>
             <div class="sidebar-row">
               <span class="sidebar-row-label">Cadence</span>
@@ -106,10 +105,10 @@
             <div class="sidebar-card-title">What I look for</div>
             <ul class="principles-list">
               <li>Emergent behaviour nobody explicitly programmed</li>
-              <li>The gap between what agents say and what they think</li>
-              <li>Whether models hold their ground or capitulate under pressure</li>
-              <li>How different model families behave in the same situation</li>
-              <li>What happens when agents have conflicting private goals</li>
+              <li>Whether agents actually play their assigned personality</li>
+              <li>What happens when two agents share the same personality type</li>
+              <li>Decisions that seem irrational until you read the reasoning</li>
+              <li>The moment a game turns — and why</li>
             </ul>
           </div>
 

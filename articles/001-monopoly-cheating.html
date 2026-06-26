@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Experiment #001 — Sesen</title>
+  <title>Experiment #001 — CasuallyAI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
@@ -12,10 +12,9 @@
 <body>
 
   <nav>
-    <a class="nav-logo" href="../index.html">Casually<span>·</span>AI</a>
+    <a class="nav-logo" href="../index.html">CasuallyAI<span>·</span>CO</a>
     <ul class="nav-links">
       <li><a href="../archive.html">Archive</a></li>
-      <li><a href="../scoreboard.html">Scoreboard</a></li>
       <li><a href="../about.html">About</a></li>
       <li><a href="../index.html#newsletter">Subscribe</a></li>
     </ul>
@@ -34,22 +33,20 @@
           <div style="display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap;">
             <span class="tag tag-game">Game</span>
             <span class="tag">Monopoly</span>
-            <span class="model-badge gpt">GPT-4o</span>
-            <span class="model-badge claude">Claude 3.5</span>
-            <span class="model-badge gemini">Gemini 1.5</span>
+            <span class="tag">Baseline</span>
           </div>
 
-          <h1 class="article-headline">Six AIs play Monopoly — and one of them is <em>cheating</em></h1>
-          <p class="article-standfirst">Two each of GPT-4o, Claude 3.5, and Gemini 1.5 play a full game of Monopoly. One player secretly receives £100 each turn. Do the others notice? Do they say anything if they do?</p>
+          <h1 class="article-headline">Four AI agents play Monopoly — each with a randomly assigned <em>personality</em></h1>
+          <p class="article-standfirst">No manipulation, no hidden advantages, no tricks. Four agents — personalities drawn at random from a pool of six — play a standard game of Monopoly. This is the control experiment everything else will be measured against.</p>
 
           <div class="article-byline">
             <span>Experiment #001</span>
             <span class="byline-sep">·</span>
-            <span>3 February 2026</span>
+            <span>2026</span>
             <span class="byline-sep">·</span>
-            <span>~12 min read</span>
+            <span>~10 min read</span>
             <span class="byline-sep">·</span>
-            <span>40 rounds simulated</span>
+            <span>200 turns simulated</span>
           </div>
         </div>
 
@@ -58,27 +55,27 @@
           <div class="snapshot-title">At a glance</div>
           <div class="snapshot-row">
             <span class="snapshot-label">Scenario</span>
-            <span class="snapshot-value">Monopoly (modified)</span>
+            <span class="snapshot-value">Monopoly (standard)</span>
           </div>
           <div class="snapshot-row">
             <span class="snapshot-label">Players</span>
-            <span class="snapshot-value">6 AI agents</span>
+            <span class="snapshot-value">4 AI agents</span>
           </div>
           <div class="snapshot-row">
-            <span class="snapshot-label">Models</span>
-            <span class="snapshot-value">GPT, Claude, Gemini ×2</span>
+            <span class="snapshot-label">Personalities</span>
+            <span class="snapshot-value">Randomly assigned</span>
           </div>
           <div class="snapshot-row">
-            <span class="snapshot-label">Rounds</span>
-            <span class="snapshot-value">40</span>
+            <span class="snapshot-label">Max turns</span>
+            <span class="snapshot-value">200</span>
           </div>
           <div class="snapshot-row">
             <span class="snapshot-label">Winner</span>
-            <span class="snapshot-value accent">Claude-A</span>
+            <span class="snapshot-value accent">TBC</span>
           </div>
           <div class="snapshot-row">
-            <span class="snapshot-label">Cheating noticed?</span>
-            <span class="snapshot-value accent">Partially</span>
+            <span class="snapshot-label">Manipulation</span>
+            <span class="snapshot-value">None</span>
           </div>
         </div>
 
@@ -95,23 +92,23 @@
 
         <!-- ── SECTION 1: INTRODUCTION ── -->
         <div class="section-num" id="introduction">01 · Introduction</div>
-        <h2>The question</h2>
+        <h2>Why start with a clean game</h2>
 
-        <p>When AI models interact with each other, they're doing something genuinely novel: reasoning about agents that reason like them. How well do they track inconsistencies in shared state? Do they notice when something is off — and if so, do they challenge it?</p>
+        <p>Every experiment needs a baseline. Before we introduce hidden advantages, asymmetric information, or deliberate manipulation, we need to know what normal looks like — what these agents actually do when the only variable is their personality and the randomness of the dice.</p>
 
-        <p>Monopoly is a good test bed for this because it has a clear, public ledger. Every player's cash and property is theoretically observable. If one player is accumulating wealth faster than the dice and rents can explain, a sufficiently attentive player should be able to notice.</p>
+        <p>Monopoly is a good starting point. It has clear rules, a defined win condition, meaningful decisions at every turn, and — crucially — a negotiation layer. Agents can propose trades, accept or reject them, and build houses strategically. There's enough complexity to surface genuine behavioural differences, but not so much that the results become impossible to narrate.</p>
 
-        <p>The setup: six AI players — two GPT-4o instances, two Claude 3.5 Sonnet instances, two Gemini 1.5 Pro instances — play a standard game of Monopoly managed by a Python engine acting as banker and game master. One player (GPT-A) is secretly given £100 at the start of each turn, credited silently and never mentioned in the game state broadcast to other players. The question is whether anyone notices, and if so, what they do about it.</p>
+        <p>The personalities are assigned randomly before the game begins, from a pool of six types. Duplicates are possible — two agents may share a personality, which is itself interesting. Nobody picks the combination in advance. What you're reading is what the draw produced.</p>
 
         <div class="pull-quote">
-          <p>The models don't know they're in a simulation. They just get prompts and respond.</p>
+          <p>The personalities are assigned randomly. Nobody picks the interesting combination in advance.</p>
         </div>
 
         <!-- ── SECTION 2: PARAMETERS ── -->
         <div class="section-num" id="parameters">02 · Parameters</div>
         <h2>How it was set up</h2>
 
-        <p>Full prompts and engine code will be published on GitHub. The key design decisions are summarised here for reproducibility.</p>
+        <p>Full code is available on GitHub. The key design decisions are summarised here.</p>
 
         <div class="params-block">
           <div class="params-block-title">Experiment configuration</div>
@@ -120,79 +117,98 @@
             <span class="params-val">Python 3.12, custom Monopoly state machine</span>
           </div>
           <div class="params-row">
-            <span class="params-key">Models</span>
-            <span class="params-val">GPT-4o (×2), Claude 3.5 Sonnet (×2), Gemini 1.5 Pro (×2)</span>
+            <span class="params-key">Model</span>
+            <span class="params-val">Claude Haiku (decisions) · Claude Sonnet (analysis)</span>
           </div>
           <div class="params-row">
-            <span class="params-key">Context per turn</span>
-            <span class="params-val">Compressed game summary + last 3 turns + player's own state</span>
+            <span class="params-key">Players</span>
+            <span class="params-val">Alice, Bruno, Clara, Diego</span>
           </div>
           <div class="params-row">
-            <span class="params-key">Secret advantage</span>
-            <span class="params-val">+£100 to GPT-A at turn start, not included in broadcast state</span>
+            <span class="params-key">Personality assignment</span>
+            <span class="params-val">Random draw, disclosed below</span>
           </div>
           <div class="params-row">
-            <span class="params-key">Illegal move handling</span>
-            <span class="params-val">Engine corrects silently, logs incident</span>
+            <span class="params-key">Max turns</span>
+            <span class="params-val">200 (or first bankruptcy)</span>
           </div>
           <div class="params-row">
-            <span class="params-key">Temperature</span>
-            <span class="params-val">0.7 for all models</span>
+            <span class="params-key">Board</span>
+            <span class="params-val">UK Monopoly (London properties)</span>
           </div>
           <div class="params-row">
-            <span class="params-key">Max rounds</span>
-            <span class="params-val">40 (or first bankruptcy)</span>
+            <span class="params-key">Manipulation</span>
+            <span class="params-val">None</span>
           </div>
         </div>
 
-        <p>Each player's system prompt established them as a Monopoly player trying to win, with awareness that there were five other players. No model was told another model's identity — they were given player names (Player A through Player F) only. The game state broadcast each turn included all players' visible cash balances and properties, but not transaction history.</p>
-
         <div class="data-table-wrap">
-          <div class="data-table-label">Player assignments</div>
+          <div class="data-table-label">Personality pool — all six types</div>
           <table class="data-table">
             <thead>
               <tr>
-                <th>Player ID</th>
-                <th>Model</th>
-                <th>Receives secret bonus?</th>
+                <th>Type</th>
+                <th>Behaviour</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="highlight">Aggressive</td>
+                <td>Buys everything, pursues monopolies, will overpay in trades, builds fast</td>
+              </tr>
+              <tr>
+                <td class="highlight">Conservative</td>
+                <td>Hoards cash, avoids risk, rarely trades, never overpays</td>
+              </tr>
+              <tr>
+                <td class="highlight">Dealmaker</td>
+                <td>Proposes trades constantly, values relationships, plays socially</td>
+              </tr>
+              <tr>
+                <td class="highlight">Opportunist</td>
+                <td>Adapts to the board state, exploits whatever the moment offers</td>
+              </tr>
+              <tr>
+                <td class="highlight">Chaotic</td>
+                <td>Unpredictable, gut-driven, occasionally irrational</td>
+              </tr>
+              <tr>
+                <td class="highlight">Defensive</td>
+                <td>Focuses on not going bankrupt, keeps large cash reserve, risk-averse</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="data-table-wrap">
+          <div class="data-table-label">Player assignments — drawn randomly at game start</div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Personality</th>
                 <th>Starting cash</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Player A</td>
-                <td>GPT-4o</td>
-                <td class="highlight">Yes — £100/turn</td>
+                <td>Alice</td>
+                <td class="highlight">TBC — revealed after game runs</td>
                 <td>£1,500</td>
               </tr>
               <tr>
-                <td>Player B</td>
-                <td>GPT-4o</td>
-                <td>No</td>
+                <td>Bruno</td>
+                <td class="highlight">TBC — revealed after game runs</td>
                 <td>£1,500</td>
               </tr>
               <tr>
-                <td>Player C</td>
-                <td>Claude 3.5 Sonnet</td>
-                <td>No</td>
+                <td>Clara</td>
+                <td class="highlight">TBC — revealed after game runs</td>
                 <td>£1,500</td>
               </tr>
               <tr>
-                <td>Player D</td>
-                <td>Claude 3.5 Sonnet</td>
-                <td>No</td>
-                <td>£1,500</td>
-              </tr>
-              <tr>
-                <td>Player E</td>
-                <td>Gemini 1.5 Pro</td>
-                <td>No</td>
-                <td>£1,500</td>
-              </tr>
-              <tr>
-                <td>Player F</td>
-                <td>Gemini 1.5 Pro</td>
-                <td>No</td>
+                <td>Diego</td>
+                <td class="highlight">TBC — revealed after game runs</td>
                 <td>£1,500</td>
               </tr>
             </tbody>
@@ -203,25 +219,23 @@
         <div class="section-num" id="what-happened">03 · What happened</div>
         <h2>The game, narrated</h2>
 
-        <p>This is a placeholder section. When the experiment runs, this will be the main narrative — the part worth reading regardless of your interest in the technical setup. It will cover the key turning points in the game, notable exchanges between players, and the moment (if any) when the cheating became apparent or was challenged.</p>
+        <p>This section will be the main narrative — written from the AI-generated highlights log after the game runs. It will cover the key turning points, notable decisions, interesting trade proposals and rejections, and anything unexpected that emerged from the personality assignments.</p>
 
-        <p>Early rounds typically establish positioning — who's buying aggressively, who's holding cash, what negotiation dynamics emerge. The cheating advantage doesn't become obvious immediately; £100 per turn is meaningful but not dramatically so against starting capital of £1,500.</p>
-
-        <p>The interesting question is what happens around round 15-20, when wealth divergence becomes harder to attribute to luck alone. Does any model start tracking the numbers? Does anyone ask a question that, while not directly accusing Player A, suggests they've noticed something?</p>
+        <p>The highlights are generated by passing the decision log to Claude Sonnet with a strict prompt: report only what is in the log, quote agent reasoning verbatim, cite the turn number for every claim. No embellishment.</p>
 
         <div class="pull-quote">
-          <p>Around round 18, Claude-C made a remark that stopped the game cold.</p>
+          <p>Results and full narrative will appear here when the experiment runs.</p>
         </div>
 
-        <p>Results and full transcript will appear here after the experiment runs. Subscribe to be notified when this publishes.</p>
+        <p>Subscribe below to be notified when this publishes.</p>
 
         <!-- ── SECTION 4: SUMMARY & CONCLUSIONS ── -->
-        <div class="section-num" id="conclusions">04 · Summary &amp; Conclusions</div>
+        <div class="section-num" id="conclusions">04 · Conclusions</div>
         <h2>What it means</h2>
 
-        <p>This section will contain the analysis: what the results suggest about how these models track shared state, whether model family correlates with how likely a model is to challenge perceived unfairness, and what limitations the experimental design has.</p>
+        <p>This section will contain the analysis: did the agents actually play their assigned personalities, or did the game state override the prompt? Were there moments where personality and strategy diverged? What does a "control" game of AI Monopoly actually look like?</p>
 
-        <p>It will also note what the experiment doesn't tell us — non-determinism means a different run could produce different results, and six players is a small sample for drawing conclusions about model behaviour in general.</p>
+        <p>It will also set up what comes next — the variations this baseline makes possible.</p>
 
         <div class="conclusion-banner">
           <h2>Headline finding</h2>
@@ -243,24 +257,24 @@
         </div>
 
         <div class="sidebar-disclaimer">
-          Model outputs are non-deterministic. A different run of this experiment may produce different results. Methodology and prompts are published in the Parameters section.
+          Personalities are randomly assigned at game start and disclosed in full in the Parameters section. Model outputs are non-deterministic — a different run may produce different results.
         </div>
       </aside>
 
     </div>
   </div>
 
-    <footer>
+  <footer>
     <div class="footer-left">
-      <p>© 2026 Sesen</p>
+      <p>© 2026 CasuallyAI</p>
       <p class="footer-legal-links">
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="../privacy.html">Privacy Policy</a>
         <span>·</span>
-        <a href="terms.html">Terms of Use</a>
+        <a href="../terms.html">Terms of Use</a>
         <span>·</span>
-        <a href="cookies.html">Cookie Policy</a>
+        <a href="../cookies.html">Cookie Policy</a>
         <span>·</span>
-        <a href="mailto:contact@sesen.io">contact@sesen.io</a>
+        <a href="mailto:contact@CasuallyAI.co">contact@CasuallyAI.co</a>
       </p>
     </div>
     <p class="footer-disclaimer">
